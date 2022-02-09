@@ -32,9 +32,10 @@ It’s pretty usefull when it comes to
 - Damage overtime — every tick deal 10 damage to player, on complete remove debuff
 
 {% highlight csharp %}
-PowerObservable.Countdown(Time)
-			   .Subscribe(OnTick, OnComplete)
-			   .AddTo(this);
+PowerObservable
+	.Countdown(Time)
+	.Subscribe(OnTick, OnComplete)
+	.AddTo(this);
 {% endhighlight %}
 
 <center>
@@ -49,9 +50,10 @@ Sequence: Countdown(3) → 2 → 1 → done with 3rd tick
 Observable sequence that produces a value after each period for certain duration with ability to pause.
 
 {% highlight csharp %}
-	PowerObservable.TimerInterval(Time)
-				   .Subscribe(OnTick, OnComplete)
-				   .AddTo(this);
+PowerObservable
+		.TimerInterval(Time)
+		.Subscribe(OnTick, OnComplete)
+		.AddTo(this);
 {% endhighlight %}
 
 <center>
@@ -64,9 +66,10 @@ Sequence: TimerInterval(3) → 1 → 1 → done with 3rd tick
 Returns an observable sequence with aggregated time since subscribe with pause option
 
 {% highlight csharp %}
-PowerObservable.TimerInterval(Time)
-			   .Subscribe(OnTick, OnComplete)
-			   .AddTo(this);
+PowerObservable
+	.TimerInterval(Time)
+	.Subscribe(OnTick, OnComplete)
+	.AddTo(this);
 {% endhighlight %}
 
 <center>
@@ -81,9 +84,10 @@ Sequence: CountedInterval() → 1 → 2 → 3 → 4 → 5…
 Returns an observable sequence with aggregated time since subscribe. Lasts for certain duration. It’s the same concept as Countdown but reversed. Instead times go up from zero. It completes after certain duration.
 
 {% highlight csharp %}
-PowerObservable.TimerInterval(Time)
-               .Subscribe(OnTick, OnComplete)
-               .AddTo(this);	   
+PowerObservable
+	.TimerInterval(Time)
+	.Subscribe(OnTick, OnComplete)
+	.AddTo(this);	   
 {% endhighlight %}
 
 <center>
@@ -101,7 +105,7 @@ var pause = new BoolReactiveProperty(); // create UniRx ReactiveProperty to mana
 PowerObservables
 	.CountedInterval(pause, tick: 1f) // you can provide the freqeuency of ticks
 	.Subscribe(time => 	
-    { 
+	{ 
 		// every tick 
 		// 00:00 ...
 		// 00:01 ...
