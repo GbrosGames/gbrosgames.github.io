@@ -31,11 +31,11 @@ It’s pretty usefull when it comes to
 - Countdown before race start when you want to prompt “3, 2, 1, GO”
 - Damage overtime — every tick deal 10 damage to player, on complete remove debuff
 
-```
+{% highlight csharp %}
 PowerObservable.Countdown(Time)
                .Subscribe(OnTick, OnComplete)
                .AddTo(this);
-```
+{% endhighlight %}
 
 <center>
 
@@ -48,11 +48,11 @@ PowerObservable.Countdown(Time)
 ### TimerInterval 
 Observable sequence that produces a value after each period for certain duration with ability to pause.
 
-```
+{% highlight csharp %}
 PowerObservable.TimerInterval(Time)
                .Subscribe(OnTick, OnComplete)
                .AddTo(this);
-```
+{% endhighlight %}
 
 <center>
 
@@ -63,15 +63,15 @@ PowerObservable.TimerInterval(Time)
 ### CountedInterval  
 Returns an observable sequence with aggregated time since subscribe with pause option
 
-```
+{% highlight csharp %}
 PowerObservable.TimerInterval(Time)
                .Subscribe(OnTick, OnComplete)
                .AddTo(this);
-```
+{% endhighlight %}
 
 <center>
 
-*Sequence: CountedInterval() → 1 → 2 → 3 → 4 → 5…
+*Sequence: CountedInterval() → 1 → 2 → 3 → 4 → 5…*
 
 </center>
 
@@ -80,11 +80,11 @@ PowerObservable.TimerInterval(Time)
 ### TimerCountedInterval   
 Returns an observable sequence with aggregated time since subscribe. Lasts for certain duration. It’s the same concept as Countdown but reversed. Instead times go up from zero. It completes after certain duration.
 
-```
+{% highlight csharp %}
 PowerObservable.TimerInterval(Time)
                .Subscribe(OnTick, OnComplete)
-               .AddTo(this);
-```
+               .AddTo(this);	   
+{% endhighlight %}
 
 <center>
 
@@ -95,7 +95,7 @@ PowerObservable.TimerInterval(Time)
 ## How To Use
 Simple use case scenario below:
 
-```
+{% highlight csharp %}
 var pause = new BoolReactiveProperty(); // create UniRx ReactiveProperty to manage pause
 
 PowerObservables
@@ -111,7 +111,7 @@ PowerObservables
 
 pause.Value = true; // interval will stops
 pause.Value = false; // interval will resume from previous point
-```
+{% endhighlight %}
 
 ## Unity Installation
 Since unity doesn’t support git dependencies in package.json you have to install [UniRx](https://github.com/neuecc/UniRx#upm-package) manually.
@@ -129,7 +129,7 @@ Edit manifest.json file in your Unity Packages directory
 ## Unity Examples
 All code samples can be found on our GitHub [page](https://github.com/GbrosGames/Tools/tree/main/Assets/UniRx/PowerObservables)
 
-### [Example 1 ](https://github.com/GbrosGames/Tools/blob/main/Assets/UniRx/PowerObservables/Samples~/Example%201/CountedInterval.cs)— Counted Interval
+### [Example 1](https://github.com/GbrosGames/Tools/blob/main/Assets/UniRx/PowerObservables/Samples~/Example%201/CountedInterval.cs) - Counted Interval
 This example shows how to create Interval observable that will return TimeSpan in the cumulative way. It shows the way of refreshing the UI. It also shows use case for BoolReactiveProperty from UniRx library to manage pause/resume functionality.
 
 ### [Example 2](https://github.com/GbrosGames/Tools/blob/main/Assets/UniRx/PowerObservables/Samples~/Example%202/Countdown.cs) — Countdown
