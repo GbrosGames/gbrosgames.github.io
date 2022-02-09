@@ -20,7 +20,7 @@ timezone: Europe/Warsaw
 
 title: Gbros Games                     # the main title
 
-tagline: We are small indie game studio. Follow our adventures through  the world of game industry.   # it will display as the sub-title
+tagline: We are small indie game studio. Follow our adventures through  the world of game industry   # it will display as the sub-title
 
 description:                      # used by seo meta and the atom feed
 
@@ -44,6 +44,7 @@ social:
     - https://github.com/GbrosGames      # change to your github homepage
     # Uncomment below to add more social links
     - https://www.facebook.com/GbrosGames
+    - https://medium.com/@gbrosgames
     # - https://www.linkedin.com/in/username
 
 google_site_verification: google_meta_tag_verification # change to your verification string
