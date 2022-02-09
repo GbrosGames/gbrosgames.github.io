@@ -99,7 +99,7 @@ Simple use case scenario below:
 var pause = new BoolReactiveProperty(); // create UniRx ReactiveProperty to manage pause
 
 PowerObservables
-    .CountedInterval(pause, tick: 1f) // you can provide the freqeuency of ticks
+	.CountedInterval(pause, tick: 1f) // you can provide the freqeuency of ticks
 	.Subscribe(time => 	
     { 
 		// every tick 
@@ -107,7 +107,7 @@ PowerObservables
 		// 00:01 ...
 		// 00:02
 	})
-	AddTo(this); 
+	.AddTo(this); 
 
 pause.Value = true; // interval will stops
 pause.Value = false; // interval will resume from previous point
