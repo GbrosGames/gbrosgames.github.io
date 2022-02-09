@@ -51,9 +51,9 @@ Observable sequence that produces a value after each period for certain duration
 
 {% highlight csharp %}
 PowerObservable
-		.TimerInterval(Time)
-		.Subscribe(OnTick, OnComplete)
-		.AddTo(this);
+	.TimerInterval(Time)
+	.Subscribe(OnTick, OnComplete)
+	.AddTo(this);
 {% endhighlight %}
 
 <center>
