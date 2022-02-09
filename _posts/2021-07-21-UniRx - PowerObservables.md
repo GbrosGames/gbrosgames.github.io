@@ -1,6 +1,6 @@
 ---
 title: UniRx — PowerObservables
-date: 2021-02-09
+date: 2021-07-21
 categories: [Unity]
 tags: [Unity, UniRx, Intermediate]
 ---
