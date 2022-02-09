@@ -32,14 +32,14 @@ It’s pretty usefull when it comes to
 - Damage overtime — every tick deal 10 damage to player, on complete remove debuff
 
 {% highlight csharp %}
-	PowerObservable.Countdown(Time)
-				   .Subscribe(OnTick, OnComplete)
-				   .AddTo(this);
+PowerObservable.Countdown(Time)
+			   .Subscribe(OnTick, OnComplete)
+			   .AddTo(this);
 {% endhighlight %}
 
 <center>
 
-* Sequence: Countdown(3) → 2 → 1 → done with 3rd tick *
+Sequence: Countdown(3) → 2 → 1 → done with 3rd tick
 
 </center>
 
@@ -56,7 +56,7 @@ Observable sequence that produces a value after each period for certain duration
 
 <center>
 
-* Sequence: TimerInterval(3) → 1 → 1 → done with 3rd tick *
+Sequence: TimerInterval(3) → 1 → 1 → done with 3rd tick
 
 </center>
 
@@ -64,14 +64,14 @@ Observable sequence that produces a value after each period for certain duration
 Returns an observable sequence with aggregated time since subscribe with pause option
 
 {% highlight csharp %}
-	PowerObservable.TimerInterval(Time)
-				   .Subscribe(OnTick, OnComplete)
-				   .AddTo(this);
+PowerObservable.TimerInterval(Time)
+			   .Subscribe(OnTick, OnComplete)
+			   .AddTo(this);
 {% endhighlight %}
 
 <center>
 
-* Sequence: CountedInterval() → 1 → 2 → 3 → 4 → 5… *
+Sequence: CountedInterval() → 1 → 2 → 3 → 4 → 5…
 
 </center>
 
@@ -88,7 +88,7 @@ PowerObservable.TimerInterval(Time)
 
 <center>
 
-* Sequence: TimerCountedInterval(3) → 1 → 2 → done with 3rd tick *
+Sequence: TimerCountedInterval(3) → 1 → 2 → done with 3rd tick
 
 </center>
 
@@ -96,21 +96,21 @@ PowerObservable.TimerInterval(Time)
 Simple use case scenario below:
 
 {% highlight csharp %}
-	var pause = new BoolReactiveProperty(); // create UniRx ReactiveProperty to manage pause
+var pause = new BoolReactiveProperty(); // create UniRx ReactiveProperty to manage pause
 
-	PowerObservables
-        .CountedInterval(pause, tick: 1f) // you can provide the freqeuency of ticks
-		.Subscribe(time => 	
-                { 
-				// every tick 
-				// 00:00 ...
-				// 00:01 ...
-				// 00:02
-		})
-		.AddTo(this); 
+PowerObservables
+    .CountedInterval(pause, tick: 1f) // you can provide the freqeuency of ticks
+	.Subscribe(time => 	
+    { 
+		// every tick 
+		// 00:00 ...
+		// 00:01 ...
+		// 00:02
+	})
+	AddTo(this); 
 
-	pause.Value = true; // interval will stops
-	pause.Value = false; // interval will resume from previous point
+pause.Value = true; // interval will stops
+pause.Value = false; // interval will resume from previous point
 {% endhighlight %}
 
 ## Unity Installation
