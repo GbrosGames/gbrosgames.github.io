@@ -54,10 +54,12 @@ public class Chest : MonoBehaviour
 {% endhighlight %}
 
 Basic approach is to define representation of State as Enums, but thanks to generic types it can be everything, even MonoBehaviours.
+
 It’s also good to define states and triggers directly in the class so we will avoid possibility of name duplication while creating our state machines. After that we can create our StateMachine. Let’s do it in Awake method.
-private StateMachine<State, Trigger> stateMachine;
 
 {% highlight csharp %}
+private StateMachine<State, Trigger> stateMachine;
+
 private void Awake()
 {
 	stateMachine = new StateMachine<State, Trigger>(State.Closed);
@@ -153,6 +155,7 @@ public void Close()
 {% endhighlight %}
 
 Please note that before firing specific trigger, we are validating if we have a permission to fire this trigger from current state.
+
 Firing a trigger that does not have an allowed transition associated with it will cause an exception to be thrown. To prevent that, simply register some default behaviour and override exception through OnUnhandledTrigger() method:
 
 {% highlight csharp %}
@@ -173,7 +176,7 @@ var graphVisualization = UmlDotGraph.Format(stateMachine.GetInfo());
 
 Copy graphVisualization variable value and paste it on the here — to see how the graph looks like. Obviously, if someone deems it necessary, this can be easily incorporated into unity through the custom editor script.
 
-##Unity Code Samples
+## Unity Code Samples
 All code samples can be found on our GitHub [page](https://github.com/GbrosGames/Tools/tree/main/Assets/Stateless)
 
 ### [Example 1](https://github.com/GbrosGames/Tools/blob/main/Assets/Stateless/Samples~/Example%201/Chest.cs) — Chest
@@ -216,7 +219,7 @@ Lastly, lets make notes around few good practices that are worth mentioning here
 - If you are creating states as separated classes, pass stateMachine Controller class to the constructor
 - Subscribe to events inside OnEnable method, and unsubscribe them in OnDisable
 
-## Where to go from here
+## Where To Go From Here
 In the incoming blog posts we will like to share more techniques, that we’ve found useful, while working with reactive state machines in our projects. We really hope that more developers can take benefit from using state machines and incorporate them into their toolbox.
 
 All related scripts (and more!) can be found in our examples repository, so please give it a try!
