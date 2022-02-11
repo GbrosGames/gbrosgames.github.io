@@ -81,10 +81,12 @@ public class Villager : MonoBehaviour
 {
 	void Awake()
 	{
-		MessageBroker.Default
+		MessageBroker
+			.Default
 			.Receive<GameEvent>()
 			.Where(x => x.Name == GameEvent.Dragon)
-			.Subscribe(_ => Flee()).AddTo(this);
+			.Subscribe(_ => Flee())
+			.AddTo(this);
 	}
 
 	void Flee()
@@ -279,11 +281,11 @@ public class Messageditor : Editor
 { 
     public override void OnInspectorGUI() 
     { 
-        DrawDefaultInspector();
+		DrawDefaultInspector();
 		
-        if (!Application.isPlaying) return; 
-        if (!(target is IMessage message)) return; 
-        if (!GUILayout.Button(nameof(IMessage.Publish))) return;
+		if (!Application.isPlaying) return; 
+		if (!(target is IMessage message)) return; 
+		if (!GUILayout.Button(nameof(IMessage.Publish))) return;
  
 		message.Publish(); 
     } 
@@ -397,7 +399,7 @@ Lastly, lets make notes around few good practices that are worth mentioning here
 - ScriptableObjects can’t have constructors. We can replace it in elegant way by creating static Create method and assign values as usual in constructors.
 - Lifecycle: remember to dispose subscriptions of your observables by using TakeWhile, TakeUntil, TakeUntilDestroy and TakeUntilDisable or simply add .AddTo(this) when you are in MonoBehaviour to prevent execution if component is destroyed that may leading to unexpected behaviours
 
-## Where to go from here
+## Where To Go From Here
 
 This is first part of the article about UniRx. If you are interested, be sure to check next part that will cover in details the monitors.
 
