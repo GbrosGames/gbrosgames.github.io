@@ -10,8 +10,8 @@ tags: [Unity, UniRx, Intermediate]
 This series will be highly related to UniRx library
 
 ## Prerequisites
-Familiar with Observer pattern
-Hands on any Rx library
+- Familiar with Observer pattern
+- Hands on any Rx library
 
 ## Introduction
 MessageBroker is an in-memory publish/subscribe messaging system that provides event-driven, decoupled architecture in order to increase performance, reliability and scalability of your Unity application.
@@ -129,6 +129,9 @@ Now lets have a look at another good approach, which is to create a class for ea
 
 {% highlight csharp %}
 public class DragonGameEvent : GameEvent { }
+{% endhighlight %}
+
+{% highlight csharp %}
 public class HappyHoursGameEvent : GameEvent { }
 {% endhighlight %}
 
@@ -156,7 +159,7 @@ public class AudioPlayer: MonoBehaviour
 			.Default
 			.Receive<GameEvent>(message => PlaySound(gameEvent))
 			.AddTo(this);  
-    } 
+	} 
 
 	void PlaySound(GameEvent gameEvent)
     {
@@ -164,7 +167,7 @@ public class AudioPlayer: MonoBehaviour
 		{
 			// play dragon event sound
 		}
-    }
+	}
 }
 {% endhighlight %}
 
@@ -269,7 +272,7 @@ public class Player: MonoBehaviour
 }
 {% endhighlight %}
 
-Custom Editor
+## Custom Editor
 There is one more improvement to the whole thing, that is really worth mentioning.
 If you are using [Odin Inspector](https://odininspector.com/) (which we highly recommend), you can just put [Button] attribute above Publish() method in our base class. This will enable you to easily propagate Messages along all Receivers from the Inspector in the play mode.
 
@@ -294,8 +297,11 @@ public class Messageditor : Editor
 
 Thanks to all of this, we can now create Message assets in our project, and test our system by clicking “Publish” button to debug certain functionality.
 
+<img src="https://static.wixstatic.com/media/f68c42_ea07c1f7b81d495e96a289f8e98c5fe0~mv2.png/v1/fill/w_360,h_184,al_c,q_95/f68c42_ea07c1f7b81d495e96a289f8e98c5fe0~mv2.webp"/>
+
 It helps us to keep our messages organized. Debugging is easy. And whole game development process is much more comfortable.
-Utilities
+
+## Utilities
 You can also create many utilities based on ScriptableObjects and the Messages system.
 Another utility which is pretty handy is component that allows you to activate GameObject after certain message is received:
 
@@ -346,7 +352,7 @@ For example if we add ActivateOnMessage component we can reference any kind of M
 
 {% highlight csharp %}
 protected virtual Func<T, bool> predicate => incomingMessage => 
-incomingMessage.GetType() == message?.GetType();
+	incomingMessage.GetType() == message?.GetType();
 {% endhighlight %}
 
 In order to filter GameEvents, like in our initial examples (by name), now we only need to simply create a class that inherits from ActivateOnMessage. Through usage of generic types we can reference any properties and create custom conditions:
@@ -407,7 +413,7 @@ All related scripts (and more!) can be found in our [examples repository](https:
 Finally If you want to do more reading check resources section!
 
 ## Resources
-[The introduction to Reactive Programming you’ve been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
-[Practical Rx Training](http://introtorx.com/)
-[UniRx Library](https://github.com/neuecc/UniRx)
-[Reactive manifesto](https://github.com/reactivemanifesto/reactivemanifesto)
+- [The introduction to Reactive Programming you’ve been missing](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
+- [Practical Rx Training](http://introtorx.com/)
+- [UniRx Library](https://github.com/neuecc/UniRx)
+- [Reactive manifesto](https://github.com/reactivemanifesto/reactivemanifesto)
