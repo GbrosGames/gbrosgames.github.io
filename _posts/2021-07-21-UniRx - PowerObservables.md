@@ -14,7 +14,7 @@ tags: [Unity, UniRx, Intermediate]
 ## Introduction
 PowerObservables are set of time-based operations with ability to pause and possibility to manage tick freqeuency
 
-<img src="/assets/img/posts/power-observables/02.png"/>
+<img src="/assets/img/posts/power-observables/02.webp"/>
 
 ## Why Power Observables
 - Easy access to time-based operations
