@@ -5,7 +5,7 @@ categories: [Unity]
 tags: [Unity, UniRx, Intermediate]
 ---
 
-<img src="https://miro.medium.com/max/1400/1*_2RS45J71xqtGhd0YXV7og.png"/>
+<img src="assets\img\posts\power-observables\01.webp"/>
 
 ## Prerequisites
 - Familiar with Observer pattern
@@ -14,7 +14,7 @@ tags: [Unity, UniRx, Intermediate]
 ## Introduction
 PowerObservables are set of time-based operations with ability to pause and possibility to manage tick freqeuency
 
-<img src="https://miro.medium.com/max/1400/1*70s-avP-TB6Pu9PfbyVsUg.png"/>
+<img src="assets\img\posts\power-observables\02.png"/>
 
 ## Why Power Observables
 - Easy access to time-based operations
@@ -44,7 +44,7 @@ Sequence: Countdown(3) → 2 → 1 → done with 3rd tick
 
 </center>
 
-<img src="https://miro.medium.com/max/1400/0*XEtPJonU3rEa_Vp6.gif"/>
+<img src="assets\img\posts\power-observables\03.gif"/>
 
 ### TimerInterval 
 Observable sequence that produces a value after each period for certain duration with ability to pause.
@@ -78,7 +78,7 @@ Sequence: CountedInterval() → 1 → 2 → 3 → 4 → 5…
 
 </center>
 
-<img src="https://miro.medium.com/max/1400/0*Q2kycPxP81ZEBt5o.gif">
+<img src="assets\img\posts\power-observables\04.gif"/>
 
 ### TimerCountedInterval   
 Returns an observable sequence with aggregated time since subscribe. Lasts for certain duration. It’s the same concept as Countdown but reversed. Instead times go up from zero. It completes after certain duration.

@@ -26,11 +26,11 @@ We were looking for lightweight solution for managing state of entities in Unity
 ## Unity Installation
 Open NuGet package manager and search for [Stateless](https://github.com/dotnet-state-machine/stateless)
 
-<img src="https://miro.medium.com/max/1102/1*I5c2SuRk_B1qW_TN10qHZA.png" />
+<img src="assets\img\posts\stateless\01.webp" />
 
 After installation, copy Stateless.dll and Stateless.xml from YourProject\Packages\Stateless.5.1.2\lib\netstandard2.0
 
-<img src="https://miro.medium.com/max/1102/1*cQKlPHbjzCjZqSPxd8OLXw.png" />
+<img src="assets\img\posts\stateless\02.webp" />
 
 Create folder for external, non-unity packages in Assets directory. It may be something like
 

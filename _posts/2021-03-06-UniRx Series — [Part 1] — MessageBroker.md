@@ -5,7 +5,7 @@ categories: [Unity]
 tags: [Unity, UniRx, Intermediate]
 ---
 
-<img src="https://miro.medium.com/max/1102/1*00H8tEaA6NxmvX1gHnNmqw.png" />
+<img src="assets\img\posts\message-broker\01.webp" />
 
 This series will be highly related to UniRx library
 
@@ -297,7 +297,7 @@ public class Messageditor : Editor
 
 Thanks to all of this, we can now create Message assets in our project, and test our system by clicking “Publish” button to debug certain functionality.
 
-<img src="https://static.wixstatic.com/media/f68c42_ea07c1f7b81d495e96a289f8e98c5fe0~mv2.png/v1/fill/w_360,h_184,al_c,q_95/f68c42_ea07c1f7b81d495e96a289f8e98c5fe0~mv2.webp"/>
+<img src="assets\img\posts\message-broker\02.webp"/>
 
 It helps us to keep our messages organized. Debugging is easy. And whole game development process is much more comfortable.
 
@@ -341,6 +341,8 @@ public class ActivateOnMessage : ActivateOnMessage<Message> { }
 
 When attached to a GameObject, above component looks like this:
 
+<img src="assets\img\posts\message-broker\03.webp"/>
+
 Good place to take advantage of the above utility is to manage our game loop.
 
 Lets say we have a game manager that is propagating game loop events like GameStart, GameEnd, GameWon, GameLost etc. 
@@ -367,6 +369,8 @@ public class ActivateOnGameEvent : ActivateOnMessage<GameEvent>
 {% endhighlight %}
 
 And component like this:
+
+<img src="assets\img\posts\message-broker\04.webp"/>
 
 That being said, in 90% of cases, we simply use ActivateOnMessage and instead do filtering through properties, we filter them by type:
 
