@@ -7,14 +7,14 @@ tags: [Unity, UniRx, Intermediate]
 
 <img src="/assets/img/posts/message-broker/01.webp" />
 
-This series will be highly related to UniRx library
+This series will be highly related to [UniRx](https://github.com/neuecc/UniRx) library
 
 ## Prerequisites
 - Familiar with Observer pattern
 - Hands on any Rx library
 
 ## Introduction
-MessageBroker is an in-memory publish/subscribe messaging system that provides event-driven, decoupled architecture in order to increase performance, reliability and scalability of your Unity application.
+[MessageBroker](https://github.com/neuecc/UniRx/blob/master/Assets/Plugins/UniRx/Scripts/Notifiers/MessageBroker.cs) is an in-memory publish/subscribe messaging system that provides event-driven, decoupled architecture in order to increase performance, reliability and scalability of your Unity application.
 
 It has three main components:
 - Publisher of message — allows message to be broadcasted to the different parts of the application
@@ -173,7 +173,8 @@ public class AudioPlayer: MonoBehaviour
 
 This wraps up basics and idea behind them.
 If you want to learn more, below is ours, more practical, approach to utilize power hidden behind the MessageBroker.
-IMessage
+
+### IMessage
 
 We like to keep all requests as ScriptableObjects. Most of our Messages inherits from base Message class and implements simple IMessage interface, as below:
 
@@ -276,7 +277,7 @@ public class Player: MonoBehaviour
 There is one more improvement to the whole thing, that is really worth mentioning.
 If you are using [Odin Inspector](https://odininspector.com/) (which we highly recommend), you can just put [Button] attribute above Publish() method in our base class. This will enable you to easily propagate Messages along all Receivers from the Inspector in the play mode.
 
-If you don’t have Odin Inspector (again, which we really recommend), you can use the following code:
+If you don’t have [Odin Inspector](https://odininspector.com/) (again, which we really recommend), you can use the following code:
 
 {% highlight csharp %}
 [CustomEditor(typeof(Message), editorForChildClasses: true)] 
