@@ -140,7 +140,7 @@ This example shows how to create Interval observable that will return TimeSpan i
 This example shows how to create, restart and refresh Countdown and how to manage subscription and completion methods in observable.
 
 ## Where To Go From Here
-[MessageBroker](https://www.gbrosgames.com/post/unirx-series-part-1-messagebroker)
+[MessageBroker](https://gbrosgames.github.io/posts/UniRx-Series-Part-1-MessageBroker/)
 
 ## Resources
 [UniRx Library](https://github.com/neuecc/UniRx)
