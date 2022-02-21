@@ -168,13 +168,13 @@ stateMachine.OnUnhandledTrigger((state, trigger) =>
 Last thing that is really great about stateless is that your state machine can be visualized as a graph. Be sure to check Samples section below to learn more and get info where to find some code examples!
 
 ## Graph Preview
-The big advantage of using Stateless .NET is that you can easily visualize your state machine. To serialize your state machine to standard text-based DOT format, you have to call stateMachine GetInfo() method:
+The big advantage of using Stateless .NET is that you can easily visualize your state machine. To serialize your state machine to standard text-based [DOT](https://en.wikipedia.org/wiki/DOT_%28graph_description_language%29) format, you have to call stateMachine GetInfo() method:
 
 {% highlight csharp %}
 var graphVisualization = UmlDotGraph.Format(stateMachine.GetInfo());
 {% endhighlight %}
 
-Copy graphVisualization variable value and paste it on the here — to see how the graph looks like. Obviously, if someone deems it necessary, this can be easily incorporated into unity through the custom editor script.
+Copy graphVisualization variable value and paste it on the [here](http://www.webgraphviz.com/) — to see how the graph looks like. Obviously, if someone deems it necessary, this can be easily incorporated into unity through the custom editor script.
 
 ## Unity Code Samples
 All code samples can be found on our GitHub [page](https://github.com/GbrosGames/Tools/tree/main/Assets/Stateless)
@@ -222,11 +222,11 @@ Lastly, lets make notes around few good practices that are worth mentioning here
 ## Where To Go From Here
 In the incoming blog posts we will like to share more techniques, that we’ve found useful, while working with reactive state machines in our projects. We really hope that more developers can take benefit from using state machines and incorporate them into their toolbox.
 
-All related scripts (and more!) can be found in our examples repository, so please give it a try!
+All related scripts (and more!) can be found in our examples [repository](https://github.com/GbrosGames/Tools?path=Assets/Stateless), so please give it a try!
 
 Finally If you want to do more reading check resources section!
 
 ## Resources
-[Official Stateless Repository](https://github.com/dotnet-state-machine/stateless)
-[Really good introduction to Stateless library by S. Henselman](https://www.hanselman.com/blog/stateless-30-a-state-machine-library-for-net-core)
+[Official Stateless Repository](https://github.com/dotnet-state-machine/stateless)<br>
+[Really good introduction to Stateless library by S. Henselman](https://www.hanselman.com/blog/stateless-30-a-state-machine-library-for-net-core)<br>
 [Great read about state pattern](https://deviq.com/design-patterns/state-design-pattern)
