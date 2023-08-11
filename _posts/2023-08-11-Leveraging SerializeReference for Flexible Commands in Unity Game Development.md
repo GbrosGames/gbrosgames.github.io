@@ -18,7 +18,7 @@ If you're curious about the base capabilities of SerializeReference, check out t
 Let's dive into the tools that helped us craft this solution:
 
 - **UniTask**: A free library offering efficient allocation-free async/await integration for Unity.
-- **OdinInspector**: A library that facilitates instance creation from dropdowns using the **ISerializeReference** attribute (You can also create custom editors or explore alternatives like [Unity-SerializeReferenceExtensions](https://github.com/mackysoft/Unity-SerializeReferenceExtensions)). These tools emphasize the use of Commands through **SerializeReference**, with a special nod to the added brilliance when employing async/await principles.
+- **OdinInspector**: A library that facilitates instance creation from dropdowns using the **SerializeReference** attribute (You can also create custom editors or explore alternatives like [Unity-SerializeReferenceExtensions](https://github.com/mackysoft/Unity-SerializeReferenceExtensions)). These tools emphasize the use of Commands through **SerializeReference**, with a special nod to the added brilliance when employing async/await principles.
 
 ### Unleashing Commands:
 But what exactly are these "commands" we keep referring to? In essence, commands are serializable configurations of actions that can be executed within a given context. They're like the building blocks of dynamic behavior in your game.
