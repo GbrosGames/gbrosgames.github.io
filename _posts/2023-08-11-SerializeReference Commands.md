@@ -35,27 +35,27 @@ Let's explore some examples:
 #### Simple Contextual Commands for Character Behavior:
 
 ```
-public class RestoreHPCharacterCommand : ICharacterCommand 
+public class RestoreHPCharacterCommand : ICharacterCommand
 {
-	public UniTask Execute(Character context, CancellationToken cancellationToken)
-	{
-		context.RestoreHP();
-		return UniTask.CompletedTask;
-	}
+    public UniTask Execute(Character context, CancellationToken cancellationToken)
+    {
+        context.RestoreHP();
+        return UniTask.CompletedTask;
+    }
 }
 ```
 
 ```
 public class ModifyStatisticCharacterCommand : ICharacterCommand
 {
-	public Id StatisticId;
-	public float Value;
-	
-	public UniTask Execute(Character context, CancellationToken cancellationToken)
-	{
-		context.GetStatistic(StatisticId).ModifyBy(Value);
-		return UniTask.CompletedTask;
-	}
+    public Id StatisticId;
+    public float Value;
+
+    public UniTask Execute(Character context, CancellationToken cancellationToken)
+    {
+        context.GetStatistic(StatisticId).ModifyBy(Value);
+        return UniTask.CompletedTask;
+    }
 }
 ```
 
@@ -96,21 +96,21 @@ Meet the Command Group—a highly useful construct enabling the execution of mul
 ```
 public class CommandGroup<TCommand, TContext> : ICommand<TContext> where TCommand : ICommand<TContext>
 {
-	public List<CommandSetup> Commands = new();
+    public List<CommandSetup> Commands = new();
     public bool ExecuteInParallel = true;
-	
-	 public async UniTask ExecuteAsync(TContext context, CancellationToken cancellationToken)
-     {
+
+    public async UniTask ExecuteAsync(TContext context, CancellationToken cancellationToken)
+    {
         if (ExecuteInParallel)
         {
-			await UniTask.WhenAll(Commands.Select(item => item.ExecuteAsync(context, cancellationToken)));
-			return;
-		}
-		
-		foreach (var item in Commands)
-		{
+            await UniTask.WhenAll(Commands.Select(item => item.ExecuteAsync(context, cancellationToken)));
+            return;
+        }
+
+        foreach (var item in Commands)
+        {
             await item.ExecuteAsync(context, cancellationToken);
-		}
+        }
 
     }
 }
@@ -121,11 +121,11 @@ Enter the Delay Command—perfect for orchestrating pauses between command execu
 ```
 public class DelayCommand<TContext> : ICommand<TContext>
 {
-	public float DelayMs;
-	public UniTask ExecuteAsync(TContext context, CancellationToken cancellationToken)
-	{
-		return UniTask.Delay(TimeSpan.FromMilliseconds(DelayMs), cancellationToken: cancellationToken);
-	}
+    public float DelayMs;
+    public UniTask ExecuteAsync(TContext context, CancellationToken cancellationToken)
+    {
+        return UniTask.Delay(TimeSpan.FromMilliseconds(DelayMs), cancellationToken: cancellationToken);
+    }
 }
 ```
 
