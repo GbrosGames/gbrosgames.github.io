@@ -4,11 +4,14 @@ date: 2023-08-11
 categories: [Unity]
 tags: [Unity, UniRx, Intermediate, Advanced]
 ---
+
 ## Introduction
 
 In the fast-paced world of game development, time is often a precious commodity. Finding efficient solutions that offer quick testing and flexible configuration becomes paramount. We, too, faced this challenge and discovered a potent approach that not only met these demands but also allowed us to customize our domain's behavior extensively.
 
 Our secret weapon? The [SerializeReference](https://docs.unity3d.com/ScriptReference/SerializeReference.html) attribute coupled with a tailored Condition/Command pattern. While our exploration of this technique is still ongoing, the preliminary results are incredibly promising. We're excited to share our insights and invite you to join the conversation.
+
+<img src="/assets/img/posts/commands/Unity%20SerializeReference%20Commands.jpg"/>
 
 If you're curious about the base capabilities of SerializeReference, check out this basic yet powerful example in [Reddit thread](https://www.reddit.com/r/Unity3D/comments/14y0c1q/serializereference_is_very_powerfull_why_is_no/).
 
