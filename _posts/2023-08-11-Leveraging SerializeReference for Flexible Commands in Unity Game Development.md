@@ -1,5 +1,5 @@
 ---
-title: SerializeReference Commands
+title: Leveraging SerializeReference for Flexible Commands in Unity Game Development
 date: 2023-08-11
 categories: [Unity]
 tags: [Unity, UniRx, Intermediate, Advanced]
